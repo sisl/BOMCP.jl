@@ -10,6 +10,9 @@ import Pkg
 Pkg.add(https://github.com/sisl/BOMCP.jl)
 ```
 ## Usage
+
+Lunar lander code can be found in this gist: https://gist.github.com/zsunberg/b42a7665f61dadc1dcd0cdb3a216e17e
+
 ```julia 
 using BOMCP
 
@@ -19,7 +22,7 @@ using POMDPSimulators
 using D3Trees
 using Random
 
-lander = LunarLander() # for now the lunar lander code can be found in this gist: https://gist.github.com/zsunberg/b42a7665f61dadc1dcd0cdb3a216e17e
+lander = LunarLander() # see link to gist above
 belief_updater = EKFUpdater(lander, lander.Q.^2, lander.R.^2)
 rollout_policy = LanderPolicy(lander)
 
